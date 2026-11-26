@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f6f7f2">
+	<title>Mi espacio | Portafolio personal</title>
+	<style>
+		:root {
+			--ink: #20342f;
+			--muted: #64746e;
+			--green: #2f6957;
+			--mint: #e4eee6;
+			--cream: #f6f7f2;
+			--white: #fff;
+			--line: #e5e9e2;
+		}
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			background: var(--cream);
+			color: var(--ink);
+			font-family: "Segoe UI", Arial, sans-serif;
+			line-height: 1.65;
+		}
+		a { color: inherit; }
+		.wrap { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+		header { padding: 22px 0; }
+		.nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+		.brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.2rem; }
+		.brand span { color: var(--green); }
+		nav { display: flex; gap: 25px; flex-wrap: wrap; }
+		nav a { text-decoration: none; color: var(--muted); font-size: .92rem; }
+		nav a:hover { color: var(--green); }
+		.hero {
+			display: grid;
+			grid-template-columns: 1.2fr .8fr;
+			align-items: center;
+			gap: 50px;
+			padding: 68px 0 78px;
+		}
+		.eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 800; }
+		h1 { margin: 12px 0 18px; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.04; letter-spacing: -.06em; }
+		h1 em { color: var(--green); font-style: normal; }
+		.intro { max-width: 580px; color: var(--muted); font-size: 1.1rem; }
+		.button {
+			display: inline-block; margin-top: 15px; padding: 12px 20px; border-radius: 999px;
+			background: var(--green); color: var(--white); text-decoration: none; font-weight: 700;
+		}
+		.button:hover { background: #244f42; }
+		.portrait-card { position: relative; justify-self: center; width: min(100%, 350px); }
+		.portrait {
+			display: block; width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover;
+			border-radius: 48% 48% 24px 24px; background: var(--mint);
+			box-shadow: 18px 18px 0 #d9e6d9;
+		}
+		.photo-note { margin: 22px 0 0; text-align: center; color: var(--muted); font-size: .8rem; }
+		section { padding: 64px 0; }
+		.section-heading { max-width: 650px; margin-bottom: 30px; }
+		h2 { margin: 7px 0 10px; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -.04em; }
+		.section-heading p, .card p { color: var(--muted); }
+		.about { background: var(--white); }
+		.about-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; align-items: start; }
+		.about-mark { padding: 26px; border-radius: 20px; background: var(--mint); color: var(--green); font-size: 1rem; font-weight: 700; }
+		.about-copy p { margin-top: 0; color: var(--muted); }
+		.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+		.card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
+		.icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 13px; background: var(--mint); font-size: 1.25rem; }
+		.card h3 { margin: 17px 0 7px; font-size: 1.12rem; }
+		.card p { margin: 0; font-size: .94rem; }
+		.interests { background: var(--mint); }
+		.interest-list { display: flex; flex-wrap: wrap; gap: 12px; }
+		.tag { padding: 10px 16px; border: 1px solid #c9dbcd; border-radius: 999px; background: rgba(255,255,255,.62); font-weight: 600; }
+		.contact { padding: 55px 0; background: #20342f; color: var(--white); }
+		.contact-row { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+		.contact .eyebrow { color: #b8d5c1; }
+		.contact h2 { margin-bottom: 5px; }
+		.contact p { margin: 0; color: #d0ddd5; }
+		.contact .button { background: var(--white); color: var(--ink); white-space: nowrap; }
+		footer { padding: 20px 0; color: var(--muted); font-size: .85rem; }
+		footer .wrap { display: flex; justify-content: space-between; gap: 15px; }
+		@media (max-width: 760px) {
+			.wrap { width: min(100% - 32px, 560px); }
+			.nav { align-items: flex-start; flex-direction: column; }
+			nav { gap: 14px; }
+			.hero { grid-template-columns: 1fr; gap: 36px; padding: 48px 0 60px; }
+			.portrait-card { width: min(78%, 300px); }
+			.about-grid { grid-template-columns: 1fr; gap: 20px; }
+			.cards { grid-template-columns: 1fr; }
+			.contact-row { align-items: flex-start; flex-direction: column; }
+			footer .wrap { flex-direction: column; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="wrap nav">
+			<a class="brand" href="#inicio" aria-label="Ir al inicio">Mi<span>Espacio</span></a>
+			<nav aria-label="Navegación principal">
+				<a href="#sobre-mi">Sobre mí</a>
+				<a href="#metas">Mis metas</a>
+				<a href="#intereses">Intereses</a>
+				<a href="#contacto">Contacto</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="wrap hero" id="inicio">
+			<div>
+				<div class="eyebrow">Hola, ¡qué gusto tenerte aquí!</div>
+				<h1>Soy <em>Manuela Fonnegra</em>,<br>estudiante y soñadora.</h1>
+				<p class="intro">Me gusta aprender, descubrir nuevas ideas y usar la tecnología para crear cosas que puedan ayudar a los demás.</p>
+				<a class="button" href="#sobre-mi">Conoce mi historia <span aria-hidden="true">↓</span></a>
+			</div>
+			<div class="portrait-card">
+				<!-- Cambia la URL por una foto tuya que tengas permiso para compartir. -->
+				<img class="portrait" src="C:\Users\USUARIO\Downloads\WhatsApp Image 2026-11-17 at 8.53.17 PM.jpeg" alt="Foto de perfil de Manuela Fonnegra">
+				<p class="photo-note">Un espacio para compartir quién soy y lo que me inspira.</p>
+			</div>
+		</section>
+
+		<section class="about" id="sobre-mi">
+			<div class="wrap about-grid">
+				<div>
+					<div class="eyebrow">Un poco sobre mí</div>
+					<h2>Aprender es parte de mi aventura.</h2>
+				</div>
+				<div class="about-copy">
+					<p>¡Hola! Soy <strong>Manuela Fonnegra</strong>, estudiante de <strong>tu grado o curso</strong>. Me considero una persona curiosa, dedicada y con muchas ganas de seguir creciendo. Disfruto compartir ideas, enfrentar nuevos retos y aprender de cada experiencia.</p>
+					<p>En mi tiempo libre me gusta <strong>escribe aquí una actividad que disfrutas</strong>. En el futuro espero convertir mis intereses en proyectos que tengan un impacto positivo.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="metas">
+			<div class="wrap">
+				<div class="section-heading">
+					<div class="eyebrow">Mirando hacia adelante</div>
+					<h2>Mis aspiraciones educativas</h2>
+					<p>Estos son algunos de los objetivos que me motivan a seguir aprendiendo.</p>
+				</div>
+				<div class="cards">
+					<article class="card"><div class="icon" aria-hidden="true">🎓</div><h3>Seguir estudiando</h3><p>Quiero completar mis estudios y explorar opciones universitarias relacionadas con mis intereses.</p></article>
+					<article class="card"><div class="icon" aria-hidden="true">💡</div><h3>Desarrollar habilidades</h3><p>Me propongo aprender nuevas herramientas y poner en práctica mis conocimientos en proyectos.</p></article>
+					<article class="card"><div class="icon" aria-hidden="true">🌱</div><h3>Hacer la diferencia</h3><p>Aspiro a usar lo que aprenda para aportar a mi comunidad y contribuir a un futuro mejor.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="interests" id="intereses">
+			<div class="wrap">
+				<div class="section-heading">
+					<div class="eyebrow">Lo que despierta mi curiosidad</div>
+					<h2>Intereses tecnológicos y áreas de estudio</h2>
+					<p>Me interesa descubrir cómo funcionan las ideas y convertirlas en soluciones creativas.</p>
+				</div>
+				<div class="interest-list" aria-label="Intereses">
+					<span class="tag">🤖 Inteligencia artificial</span>
+					<span class="tag">💻 Programación</span>
+					<span class="tag">🎨 Diseño digital</span>
+					<span class="tag">🔐 Ciberseguridad</span>
+					<span class="tag">📊 Ciencia de datos</span>
+					<span class="tag">🌎 Ciencias y sostenibilidad</span>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="wrap">
+				<div class="section-heading">
+					<div class="eyebrow">También disfruto</div>
+					<h2>Otros intereses personales</h2>
+				</div>
+				<div class="cards">
+					<article class="card"><div class="icon" aria-hidden="true">📚</div><h3>Leer y descubrir</h3><p>Me gusta aprender sobre temas nuevos y encontrar inspiración en historias e ideas.</p></article>
+					<article class="card"><div class="icon" aria-hidden="true">🎵</div><h3>Música y creatividad</h3><p>Disfruto escuchar música y expresarme de maneras creativas.</p></article>
+					<article class="card"><div class="icon" aria-hidden="true">🤝</div><h3>Compartir en equipo</h3><p>Valoro colaborar, escuchar otras perspectivas y ayudar cuando puedo.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact" id="contacto">
+			<div class="wrap contact-row">
+				<div>
+					<div class="eyebrow">¡Hablemos!</div>
+					<h2>¿Quieres ponerte en contacto?</h2>
+					<p>Escríbeme a través del correo apropiado para esta actividad.</p>
+				</div>
+				<!-- Reemplaza el correo de ejemplo; evita publicar información privada. -->
+				<a class="button" href="mailto:tu.correo@ejemplo.com">Enviar un correo <span aria-hidden="true">↗</span></a>
+			</div>
+		</section>
+	</main>
+
+	<footer><div class="wrap"><span>© 2025 · Mi espacio personal</span><span>Hecho con curiosidad y ganas de aprender.</span></div></footer>
+</body>
+</html>

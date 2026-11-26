@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vivir con intención</title>
+	<style>
+		:root { --fondo: #f7f4ed; --texto: #283b32; --suave: #65756b; --verde: #55745d; --dorado: #bd8954; }
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; background: var(--fondo); color: var(--texto); font-family: Georgia, "Times New Roman", serif; line-height: 1.7; }
+		.portada { min-height: 82vh; display: grid; place-items: center; padding: 4rem 1.5rem; text-align: center; background: radial-gradient(ellipse at 50% 110%, #dfd5bd 0, transparent 55%), linear-gradient(#e9eee5, var(--fondo)); }
+		.portada-contenido { max-width: 720px; }
+		.etiqueta { color: var(--verde); font: 700 .75rem Arial, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+		h1 { margin: 1rem 0; font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 400; letter-spacing: -.06em; line-height: .98; }
+		.portada p:not(.etiqueta) { max-width: 570px; margin: 1.5rem auto; color: var(--suave); font-size: 1.2rem; }
+		.boton { display: inline-block; margin-top: .5rem; padding: .7rem 1.2rem; border: 1px solid #879187; border-radius: 99px; color: var(--texto); font: 600 .88rem Arial, sans-serif; text-decoration: none; }
+		.boton:hover { background: #fffdf8; }
+		main { width: min(100% - 2rem, 920px); margin: auto; }
+		.introduccion { max-width: 680px; margin: auto; padding: 5rem 1rem 3rem; text-align: center; }
+		h2 { margin: .6rem 0 1rem; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; letter-spacing: -.035em; line-height: 1.15; }
+		.introduccion p, .idea p, .cierre p { color: var(--suave); }
+		.ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; padding-bottom: 4.5rem; }
+		.idea { padding: clamp(1.5rem, 4vw, 2.3rem); border: 1px solid #e4e1d8; border-radius: 16px; background: #fffdf8; }
+		.numero { color: var(--dorado); font: 700 .78rem Arial, sans-serif; letter-spacing: .13em; }
+		.idea h3 { margin: .7rem 0 .4rem; font-size: 1.5rem; font-weight: 400; }
+		.idea p { margin: 0; }
+		blockquote { margin: 0 0 4rem; padding: 2rem 1rem; border-top: 1px solid #d7d8ce; border-bottom: 1px solid #d7d8ce; color: var(--verde); font-size: clamp(1.4rem, 4vw, 2.1rem); font-style: italic; text-align: center; }
+		.cierre { padding: 3.5rem 1.5rem; border-radius: 18px 18px 0 0; background: #e8ece3; text-align: center; }
+		.cierre p { max-width: 540px; margin: .5rem auto; }
+		footer { padding: 1.4rem; color: var(--suave); font: .8rem Arial, sans-serif; text-align: center; }
+		@media (max-width: 620px) { .portada { min-height: 76vh; } .ideas { grid-template-columns: 1fr; } }
+	</style>
+</head>
+<body>
+	<header class="portada">
+		<div class="portada-contenido">
+			<p class="etiqueta">Una vida más presente</p>
+			<h1>Vivir con<br>intención</h1>
+			<p>No hace falta tenerlo todo resuelto. Basta con elegir, con cariño, dónde ponemos nuestro tiempo, nuestra atención y nuestro corazón.</p>
+			<a class="boton" href="#ideas">Descubre algunas ideas ↓</a>
+		</div>
+	</header>
+	<main>
+		<section class="introduccion">
+			<p class="etiqueta">Pequeños comienzos</p>
+			<h2>Lo cotidiano también puede ser extraordinario.</h2>
+			<p>Vivir con intención no exige cambiarlo todo. A veces comienza con una pausa, una pregunta honesta o una decisión pequeña tomada con presencia.</p>
+		</section>
+		<section class="ideas" id="ideas" aria-label="Ideas para vivir con intención">
+			<article class="idea"><span class="numero">01 — PRESENCIA</span><h3>Habita el momento</h3><p>Saborea tu comida, escucha sin preparar una respuesta y mira con atención lo que te rodea. El presente merece algo más que una visita apresurada.</p></article>
+			<article class="idea"><span class="numero">02 — ELECCIÓN</span><h3>Elige tus síes</h3><p>Antes de llenar la agenda, pregúntate qué merece tu energía. Un no dicho con amabilidad puede ser un sí al descanso o a lo que de verdad valoras.</p></article>
+			<article class="idea"><span class="numero">03 — SENCILLEZ</span><h3>Haz espacio</h3><p>Suelta una expectativa, un hábito o una comparación que ya no te ayuda. A veces, vivir mejor empieza por cargar un poco menos.</p></article>
+			<article class="idea"><span class="numero">04 — CONEXIÓN</span><h3>Cuida tus vínculos</h3><p>Una conversación sin prisa, una pregunta sincera, un mensaje porque sí: los gestos pequeños son una forma hermosa de decir «estoy aquí».</p></article>
+			<article class="idea"><span class="numero">05 — GRATITUD</span><h3>Reconoce lo que florece</h3><p>La gratitud no borra los días difíciles. Nos permite ver también la luz de la tarde, una taza caliente y las personas que nos acompañan.</p></article>
+			<article class="idea"><span class="numero">06 — PACIENCIA</span><h3>Permítete cambiar</h3><p>No tienes que transformarte de un día para otro. Crecer también es equivocarse, aprender y volver a empezar con un poco más de ternura.</p></article>
+		</section>
+		<blockquote>«La intención no es hacer más, sino estar más presente en aquello que eliges hacer.»</blockquote>
+		<section class="cierre">
+			<p class="etiqueta">Una pregunta para hoy</p>
+			<h2>¿Qué merece tu atención?</h2>
+			<p>Elige una cosa pequeña y hazla con todo tu corazón. Por hoy, eso es suficiente.</p>
+		</section>
+	</main>
+	<footer>Una vida plena se construye momento a momento.</footer>
+</body>
+</html>
